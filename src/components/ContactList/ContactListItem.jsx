@@ -1,6 +1,8 @@
-import './ContactList.scss';
+
+// import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
+import "./ContactList.scss";
 const ContactListItem = ({ id, name, number, onDeleteContact }) => (
   <li className="contact-list-item">
     <span className="contact-list-name">{name} </span>
@@ -21,4 +23,15 @@ ContactListItem.propTypes = {
   number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
+
+
+// const mapStateToProps = (state) => ({
+//   contacts: state.phonebook.items,
+// });
+
+// const mapDispatchToProps = (dispatch) => ({
+//   onDeleteContact: () => null,
+// });
+
+
 export default ContactListItem;

@@ -7,15 +7,26 @@ const items=(state=[], {type, payload}) => {
 case actionTypes.ADD:
   return [...state, payload];
 
+
+    case actionTypes.DELETE:
+  return state.filter(contact => contact.id !== payload);
+
     default: 
-    return state 
+    return state;
+
 
   }
    
 }
 
-const filter = (state = '', action) => {
-  return state;
+const filter = (state = '', {type, payload}) => {
+    switch (type) {
+      case actionTypes.FILTER:
+        return payload;
+
+      default:
+        return state;
+    }
 };
 
 export default combineReducers({
