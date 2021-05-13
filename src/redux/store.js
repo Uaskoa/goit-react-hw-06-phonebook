@@ -44,7 +44,8 @@ const rootReducer = combineReducers({
 const store = configureStore({
   reducer: rootReducer,
   middleware,
-  devTools: process.env.NODE_ENV === "development",
+  devTools: true,
+  // devTools: process.env.NODE_ENV === "development",
 });
 
 const persistor = persistStore(store);
