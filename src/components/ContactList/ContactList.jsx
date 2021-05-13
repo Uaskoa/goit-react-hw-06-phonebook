@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import phonebookActions from "../../redux/phonebook/phonebooks-actions";
+import phonebookActions from "../../redux/phonebook/phonebook-actions";
 
 import ContactListItem from "./ContactListItem";
 
@@ -31,10 +31,9 @@ const getFilteredContacts = (allContacts, filter) => {
   );
 };
 
-const mapStateToProps = ({phonebook: {items, filter}}) => ({
+const mapStateToProps = ({ contacts: { items, filter } }) => ({
   contacts: getFilteredContacts(items, filter),
 });
-
 
 // const mapStateToProps = (state) => ({
 //   contacts: getFilteredContacts(state.phonebook.items, state.phonebook.filter),
@@ -47,7 +46,6 @@ const mapStateToProps = ({phonebook: {items, filter}}) => ({
 //     contacts: filteredContacts,
 //   };
 // };
-
 
 const mapDispatchToProps = (dispatch) => ({
   onDeleteContact: (contactId) =>

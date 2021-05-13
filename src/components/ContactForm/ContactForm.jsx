@@ -1,28 +1,28 @@
-import { Component } from 'react';
-import {connect} from 'react-redux'
-import phonebookActions from '../../redux/phonebook/phonebooks-actions';
-import shortId from 'shortid';
-import './ContactForm.scss';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import { connect } from "react-redux";
+import phonebookActions from "../../redux/phonebook/phonebook-actions";
+import shortId from "shortid";
+import "./ContactForm.scss";
+import PropTypes from "prop-types";
 
 class ContactForm extends Component {
   state = {
-    name: '',
-    number: '',
+    name: "",
+    number: "",
   };
 
   nameInputId = shortId.generate();
   phoneInputId = shortId.generate();
 
-  handleNameChange = event => {
+  handleNameChange = (event) => {
     this.setState({ name: event.currentTarget.value });
   };
 
-  handlePhoneChange = event => {
+  handlePhoneChange = (event) => {
     this.setState({ number: event.currentTarget.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     this.props.onSubmit(this.state);
@@ -31,7 +31,7 @@ class ContactForm extends Component {
   };
 
   reset = () => {
-    this.setState({ name: '', number: '' });
+    this.setState({ name: "", number: "" });
   };
 
   render() {

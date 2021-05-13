@@ -6,7 +6,7 @@ import ContactList from "./components/ContactList/ContactList";
 import "./styles.css";
 import "./App.scss";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <div className="container">
@@ -20,7 +20,7 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
 
