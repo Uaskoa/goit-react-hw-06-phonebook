@@ -17,8 +17,6 @@ import {
 import phonebookReducer from "./phonebook/phonebook-reducer";
 import storage from "redux-persist/lib/storage";
 
-
-
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -29,17 +27,15 @@ const middleware = [
   logger,
 ];
 
-
 const contactsPersistConfig = {
   key: "contacts",
   storage,
-  blacklist: ['filter'],
+  blacklist: ["filter"],
 };
 
 const rootReducer = combineReducers({
   contacts: persistReducer(contactsPersistConfig, phonebookReducer),
 });
-
 
 const store = configureStore({
   reducer: rootReducer,
@@ -50,7 +46,9 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
-export default { store, persistor };
+const storeFunc = { store, persistor };
+
+export default storeFunc;
 
 //// WITHOUT REDUX TOOLKIT
 // import { createStore, combineReducers } from "redux";

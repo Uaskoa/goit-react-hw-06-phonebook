@@ -1,8 +1,6 @@
-// import { Component } from "react";
 import Filter from "./components/Filter/Filter";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
-// import shortId from 'shortid';
 import "./styles.css";
 import "./App.scss";
 
